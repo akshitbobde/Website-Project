@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #17181a;
+    font-family: 'Montserrat',sans-serif;
+}
+
+#logo{
+    color: white;
+    font-family: "Abril Fatface";
+}
+
+.nav-header{
+    min-height: 10vh;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*Isse sapce evenly spread hoti ye flexbox ki conditions hai mane upaar aur niche barabar height aur width hai*/
+    color: white;
+    width: 80%;
+    margin: auto;
+    /*automatically margin set hogae hai haar taraf se*/
+    padding: 2rem 0rem;
+}
+
+/*Ye nich ewale jo hamburger hai n usko style karne ke liye use kar rahe hai */
+
+.line1,.line2{
+    width: 3rem;
+    height: 0.2rem;
+    margin: 0.4rem;
+    background: white;
+    pointer-events: none; /*Isse kya hota hai n ki apan days wala jaha likha hai vaha click karenge to bhi kuch nahi hota but apne ko hamb urger me click karna hai */
+}
+/*ye vo 3 images hai vo slides wala uski baat ho rahi hai mountain trek aur fasjion wala hai iye*/
+.slide{
+    min-height: 100vh;
+    margin: 0 auto 0 auto;
+    width: 80%;/*ye hai ki width kitni hogi aajubaju se aasa hai ki n 20% khali hoga aajubaju wale ka*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background: #17181a;
+}
+
+.hero-desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    /*ye position relative isiliye kar rahe hai ki text ke uppar ki ek div hai vo slide effect hone ke baad display hoga to asolute vo chipka  rehta hai but relative me chipka nahi rehta hai alag line me rehta hai */
+    flex-basis: 25rem;
+    /*https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis    ye link dekh lo bas box sizing ka hai vo basically vo faila raha thoda sa*/
+    padding-left: 5rem;
+    /*Ye padding left ke liye hai vo text ko image se yhoda dur kar rahi hai */
+
+}
+/*Ye jo hai vo container hai actual wala */
+.hero-img{
+    position: relative;/*Same reason*/
+    flex: 1;
+    flex-basis: 25rem;
+}
+/*Ye basically pure dabbe me hi aagaea and cover se vo jyada streched nahi lagega*/
+.hero-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fashion-span{
+    color: rgb(255,139,93);
+}
+.mountain-span{
+    color: rgb(86,124,228);
+}
+.hike-span{
+    color: rgb(167,110,231);
+}
+
+/*Ye vo hai n jaha apan ne fingertips likha hai*/
+
+/*apne ko  6-24 se shuru karna hai*/
+
+.hero-desc h2{
+    font-family: "Abril Fatface";
+    font-size: 5rem;
+
+}
+/*Ye vo descrption hai vo image ke sath aa rha hai vahi hai ye*/
+.hero-desc p{
+    padding: 3rem 0rem;
+    font-size: 1.5rem;
+    color: rgb(223,223,223);
+}
+
+/*Ab explore button ke bare me apan css likhne wale hai */
+.explore{
+    padding: 1rem 2rem;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+    align-self: flex-start;
+    cursor: pointer;
+}
+/*Ye basically kya kar raha hai n ki jo hamburger open karne ke baad jo page khulega vo page hai and apan usme css laga rahe hai*/
+.nav-bar{
+    position: fixed;
+    /*fixed rehta vo scroll wagarah se kuch ffect nahi hota hai farak nahi padta hai usme relative me kaisa rehta apan height width set kar sahte hai acche se */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    /*ye prefernce ke liye rehta n jitna z index kum uta hi vo kum dikhta hai mane order of prefeence ka*/
+    opacity: 1;
+    clip-path: circle(50px at 100% -10%);
+    -webkit-clip-path: circle(50px at 100% -10%);
+    /*Ye jo uppar ke 2 commands hai vo basically vo transition effect hai n circular wala uske liye hai to circle me higa 50px diamneter hai uska 100% se vo left me shift hoga and -10% se uppar chalegagea uppar jo dikhega nahi*/
+}
+
+.burger{
+    cursor: pointer;
+}
+
+.nav-links{
+    font-size: 3rem;
+    flex-basis: 30rem;
+}
+
+.nav-links h3{
+    padding: 3rem 0rem;
+}
+/*Ye sab texts wagarah hai vo bold wagarah me likha hua hai uski ki styling kar rahe hai apan aur uch nahi jyada mazag mari nahi ye kaam jyada ka*/
+
+.contact h2{
+    font-size: 3rem;
+    padding: 2rem 0rem;
+}
+
+.contact p{
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+/*Ye hai div jo sliding effect hai n uske kaam ka hai ye uske liye jo apan javascript se add kare wale hai-->*/
+/*Ye niche wala  n basically kya hai pura jo cintent hai n main wala vo hi cover kar raha hai bas aur uch nahi ache se smjhna hai to bacground ok white kar do bas aur kuch nahi sab apne app smjh jauge*/
+.reveal-img,.reveal-text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #17181a;
+    left: 0;
+    top: 0;
+}
+/*Ye jo hai n aakhri explore apan ne click karenge to aapkri me uska aanimation ka hai vo-->*/
+.cursor{
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+}
+/*Ye vo cursor ke sath nahi kya  gol gol ghum raha uski ka hai ye white aur circle circle*/
